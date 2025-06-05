@@ -4,28 +4,148 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aaron Sibanda – Portfolio</title>
+  <style>
+    /* ===== MATRIX‑STYLE THEME ===== */
+    @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+    :root {
+      --matrix-green: #0aff0a;
+      --matrix-dark: #000;
+      --matrix-mid: #001a00;
+      --matrix-card: rgba(0, 255, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: "Share Tech Mono", monospace;
+      background: var(--matrix-dark);
+      color: var(--matrix-green);
+      line-height: 1.6;
+      text-shadow: 0 0 4px var(--matrix-green);
+      overflow-x: hidden;
+    }
+
+    /* Matrix rain overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent 0 2px,
+        rgba(0, 255, 0, 0.12) 2px 4px
+      );
+      background-size: 100% 200%;
+      animation: rain 18s linear infinite;
+      mix-blend-mode: lighten;
+      opacity: 0.25;
+    }
+
+    @keyframes rain {
+      0% { background-position-y: 0; }
+      100% { background-position-y: -100%; }
+    }
+
+    /* Typography */
+    h1, h2, h3 {
+      margin-top: 0;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    h2 {
+      border-left: 4px solid var(--matrix-green);
+      padding-left: 0.75rem;
+      margin: 2rem 0 1.5rem;
+    }
+
+    a {
+      color: var(--matrix-green);
+      text-decoration: none;
+      transition: color 0.2s ease, text-shadow 0.2s ease;
+    }
+    a:hover {
+      color: #baffba;
+      text-shadow: 0 0 6px #baffba;
+    }
+
+    /* Layout */
+    section {
+      padding: 2.5rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .experience, .project {
+      background: var(--matrix-card);
+      border: 1px solid rgba(0, 255, 0, 0.2);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 8px rgba(0, 255, 0, 0.15), 0 0 12px rgba(0, 255, 0, 0.05) inset;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--matrix-mid);
+      color: var(--matrix-green);
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+    footer nav {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    footer nav a {
+      opacity: 0.85;
+    }
+    footer nav a:hover {
+      opacity: 1;
+    }
+
+    /* Responsive grid */
+    @media (min-width: 700px) {
+      .experience-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  
   <section id="about">
     <h2>About Me</h2>
     <p>I'm a young software developer committed to working with and building teams of highly competent engineers utilizing the newest tools and technologies, while adhering to the highest standards.</p>
-    <p>My experience has helped me understand how to create client‑focused products that solve real problems.</p>
+    <p>My experience has helped me understand how to create client-focused products that solve real problems.</p>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
-    <div class="experience">
-      <h3>2023 HackYeah – Kraków</h3>
-      <p>I got to learn a bit more about working with other improptu.</p>
-    </div>
-    <div class="experience">
-      <h3>SquareUp – Site Builder</h3>
-      <p> - Help troubleshoot websites</p>
-      <p> - Help integrate APIs to sites</p>
-      <p> - Integrate payment methods into sites</p>
-      <p> - Handled sales of products</p>
-      <p> - Above everything else, working at Square helped me understand how to build products that are client‑focused</p>
+    <div class="experience-wrapper">
+      <div class="experience">
+        <h3>2023 HackYeah – Kraków</h3>
+        <p>I got to learn a bit more about working with other improptu.</p>
+      </div>
+      <div class="experience">
+        <h3>SquareUp – Site Builder</h3>
+        <p>• Help troubleshoot websites<br>
+        • Integrate APIs into sites<br>
+        • Integrate payment methods into sites<br>
+        • Handle sales of products<br>
+        • Above everything else, working at Square helped me understand how to build products that are client-focused</p>
+      </div>
     </div>
   </section>
 
@@ -33,7 +153,7 @@
     <h2>Projects</h2>
     <div class="project">
       <h3><a href="https://github.com/aaronrhino99/Penguin-Game-c-" target="_blank">Penguin Game (C++)</a></h3>
-      <p>Side‑scrolling platformer written from scratch in C++.</p>
+      <p>Side-scrolling platformer written from scratch in C++.</p>
     </div>
     <div class="project">
       <h3><a href="https://github.com/aaronrhino99/myProgramClasses" target="_blank">My Program Classes (C++)</a></h3>
@@ -45,7 +165,7 @@
     </div>
     <div class="project">
       <h3><a href="https://github.com/aaronrhino99/snakeGAme" target="_blank">Snake Game (C++)</a></h3>
-      <p>Console‑based recreation of the classic Snake game.</p>
+      <p>Console-based recreation of the classic Snake game.</p>
     </div>
     <div class="project">
       <h3><a href="https://github.com/aaronrhino99/sample_app" target="_blank">Sample App (Ruby on Rails)</a></h3>
@@ -59,7 +179,7 @@
 
   <section id="contact">
     <h2>Contact Details</h2>
-    <p>Email me at: <a href="mailto:aaronnsibanda@gmail.com" style="color:#00ffcc;">aaronnsibanda@gmail.com</a></p>
+    <p>Email me at: <a href="mailto:aaronnsibanda@gmail.com">aaronnsibanda@gmail.com</a></p>
   </section>
 
   <footer>
