@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aaron Sibanda – Portfolio</title>
   <style>
-    /* ===== MATRIX‑STYLE THEME ===== */
     @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 
     :root {
@@ -15,47 +14,17 @@
       --matrix-card: rgba(0, 255, 0, 0.05);
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
     html, body {
       margin: 0;
       padding: 0;
-      min-height: 100%;
       font-family: "Share Tech Mono", monospace;
       background: var(--matrix-dark);
       color: var(--matrix-green);
       line-height: 1.6;
       text-shadow: 0 0 4px var(--matrix-green);
-      overflow-x: hidden;
     }
 
-    /* Matrix rain overlay */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image: repeating-linear-gradient(
-        0deg,
-        transparent 0 2px,
-        rgba(0, 255, 0, 0.12) 2px 4px
-      );
-      background-size: 100% 200%;
-      animation: rain 18s linear infinite;
-      mix-blend-mode: lighten;
-      opacity: 0.25;
-    }
-
-    @keyframes rain {
-      0% { background-position-y: 0; }
-      100% { background-position-y: -100%; }
-    }
-
-    /* Typography */
     h1, h2, h3 {
-      margin-top: 0;
       font-weight: 400;
       letter-spacing: 0.05em;
     }
@@ -69,16 +38,15 @@
     a {
       color: var(--matrix-green);
       text-decoration: none;
-      transition: color 0.2s ease, text-shadow 0.2s ease;
     }
+
     a:hover {
       color: #baffba;
       text-shadow: 0 0 6px #baffba;
     }
 
-    /* Layout */
     section {
-      padding: 2.5rem 1rem;
+      padding: 2rem 1rem;
       max-width: 900px;
       margin: 0 auto;
     }
@@ -89,17 +57,14 @@
       border-radius: 8px;
       padding: 1rem 1.25rem;
       margin-bottom: 1.5rem;
-      box-shadow: 0 0 8px rgba(0, 255, 0, 0.15), 0 0 12px rgba(0, 255, 0, 0.05) inset;
     }
 
-    /* Footer */
     footer {
       background: var(--matrix-mid);
-      color: var(--matrix-green);
       text-align: center;
       padding: 2rem 1rem;
-      position: relative;
     }
+
     footer nav {
       margin-top: 1rem;
       display: flex;
@@ -107,79 +72,77 @@
       gap: 2rem;
       flex-wrap: wrap;
     }
-    footer nav a {
-      opacity: 0.85;
-    }
-    footer nav a:hover {
-      opacity: 1;
-    }
-
-    /* Responsive grid */
-    @media (min-width: 700px) {
-      .experience-wrapper {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 1.5rem;
-      }
-    }
   </style>
 </head>
 <body>
   <section id="about">
     <h2>About Me</h2>
-    <p>I'm a young software developer committed to working with and building teams of highly competent engineers utilizing the newest tools and technologies, while adhering to the highest standards.</p>
-    <p>My experience has helped me understand how to create client-focused products that solve real problems.</p>
+    <p>I’m a software engineer passionate about building reliable, user-focused products. I enjoy collaborating in agile teams to solve real-world problems and deliver measurable value. I’m especially drawn to IoT, video streaming, and backend systems development using modern technologies.</p>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
-    <div class="experience-wrapper">
-      <div class="experience">
-        <h3>2023 HackYeah – Kraków</h3>
-        <p>I got to learn a bit more about working with other improptu.</p>
-      </div>
-      <div class="experience">
-        <h3>SquareUp – Site Builder</h3>
-        <p>• Help troubleshoot websites<br>
-        • Integrate APIs into sites<br>
-        • Integrate payment methods into sites<br>
-        • Handle sales of products<br>
-        • Above everything else, working at Square helped me understand how to build products that are client-focused</p>
-      </div>
+    <div class="experience">
+      <h3>Web Developer — Jalapenno (Warsaw, Poland)</h3>
+      <p><em>Mar 2023 – Present</em></p>
+      <ul>
+        <li>Reduced page-load times by 30% through query optimization and Redis caching.</li>
+        <li>Resolved 50+ production bugs, raising crash-free sessions to 99%.</li>
+        <li>Led zero-downtime migrations for 3 critical data modules.</li>
+        <li>Integrated Stripe, INPOST, and in-app messaging APIs to unlock new revenue streams.</li>
+        <li><strong>Technologies:</strong> Ruby on Rails, PostgreSQL, Redis, Sidekiq, React, Docker, AWS</li>
+      </ul>
+    </div>
+    <div class="experience">
+      <h3>Customer Service Agent — SquareUp (Foundever) (Warsaw, Poland)</h3>
+      <p><em>Jan 2024 – Jan 2025</em></p>
+      <ul>
+        <li>Managed 40–60 customer inquiries daily while sustaining a 95% CSAT score.</li>
+        <li>Rolled out smart-reply templates in Zendesk, cutting response time by 20%.</li>
+        <li>Authored onboarding playbooks, reducing new hire ramp-up time by two weeks.</li>
+        <li>Beta-tested AI troubleshooting assistants and provided UX feedback to engineering.</li>
+        <li><strong>Technologies:</strong> Jira, Zendesk, Amazon Connect, Microsoft 365</li>
+      </ul>
+    </div>
+    <div class="experience">
+      <h3>Network Technician — Riot Network (Johannesburg, South Africa)</h3>
+      <p><em>Jun 2021 – Jul 2022</em></p>
+      <ul>
+        <li>Deployed over 15 5G edge pods city-wide, boosting median throughput by 40%.</li>
+        <li>Reduced downtime by 25% through Python log analysis.</li>
+        <li>Customized embedded Linux builds, cutting device boot time by 10 seconds.</li>
+        <li>Automated deployments with Bash and Ansible for consistency and speed.</li>
+        <li><strong>Technologies:</strong> Python, Embedded Linux, Ansible, Bash, Grafana</li>
+      </ul>
     </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <div class="project">
-      <h3><a href="https://github.com/aaronrhino99/Penguin-Game-c-" target="_blank">Penguin Game (C++)</a></h3>
-      <p>Side-scrolling platformer written from scratch in C++.</p>
-    </div>
-    <div class="project">
-      <h3><a href="https://github.com/aaronrhino99/myProgramClasses" target="_blank">My Program Classes (C++)</a></h3>
-      <p>Reusable C++ classes and practice exercises.</p>
-    </div>
-    <div class="project">
-      <h3><a href="https://github.com/aaronrhino99/firstProgram" target="_blank">First Program (Java)</a></h3>
-      <p>Early Java project demonstrating application fundamentals.</p>
-    </div>
-    <div class="project">
-      <h3><a href="https://github.com/aaronrhino99/snakeGAme" target="_blank">Snake Game (C++)</a></h3>
-      <p>Console-based recreation of the classic Snake game.</p>
+      <h3><a href="https://github.com/aaronrhino99/music_app" target="_blank">StreamApp (Ruby on Rails + React)</a></h3>
+      <ul>
+        <li>Full-stack YouTube-to-MP3 web app with API backend and React frontend.</li>
+        <li>Integrated YouTube Data API and yt-dlp + FFmpeg for high-quality MP3 conversion.</li>
+        <li>Built dynamic audio player with Howler.js and WaveSurfer.js visualizations.</li>
+        <li>Managed downloads and conversions via Sidekiq + Redis for background jobs.</li>
+        <li><strong>Technologies:</strong> Ruby on Rails 8.0, PostgreSQL, Devise, Redis, Sidekiq, React, Docker</li>
+      </ul>
     </div>
     <div class="project">
       <h3><a href="https://github.com/aaronrhino99/sample_app" target="_blank">Sample App (Ruby on Rails)</a></h3>
-      <p>Rails tutorial application following the Hartl guide.</p>
-    </div>
-    <div class="project">
-      <h3><a href="https://github.com/aaronrhino99/music_app" target="_blank">Music App (Ruby)</a></h3>
-      <p>CLI experiment for managing playlists and metadata.</p>
+      <ul>
+        <li>Twitter-style clone mastering authentication and timeline features.</li>
+        <li>Implemented secure login, user profiles, and threaded comments using Devise and ActiveRecord.</li>
+        <li><strong>Technologies:</strong> Ruby on Rails, JavaScript, HTML</li>
+      </ul>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact Details</h2>
-    <p>Email me at: <a href="mailto:aaronnsibanda@gmail.com">aaronnsibanda@gmail.com</a></p>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:aaronnsibanda@gmail.com">aaronnsibanda@gmail.com</a></p>
+    <p>Phone: <a href="tel:+48732775191">+48 732 775 191</a></p>
   </section>
 
   <footer>
@@ -187,7 +150,7 @@
     <nav>
       <a href="https://www.linkedin.com/in/aaron-sibanda-16876b171/">LinkedIn</a>
       <a href="https://github.com/aaronrhino99">GitHub</a>
-      <a href="tel:+48732775191">+48 732 775 191</a>
+      <a href="https://aaronrhino99.github.io/portfolio_AaronSibanda">Portfolio</a>
     </nav>
   </footer>
 </body>
