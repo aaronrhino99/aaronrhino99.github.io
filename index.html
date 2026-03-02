@@ -8,332 +8,225 @@
   <meta name="description" content="Aaron Sibanda - Software Engineer specializing in Ruby on Rails, React, and backend systems. Based in Warsaw, Poland.">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+  body {
+  font-family: 'Inter', sans-serif;
+  background: #f5f7fa;
+  color: #1f2937;
+}
 
-    :root {
-      --primary-dark: #1a1a1a;
-      --secondary-dark: #2c2c2c;
-      --text-primary: #ffffff;
-      --text-secondary: #d0d0d0;
-      --text-muted: #808080;
-      --accent-blue: #007bff;
-      --card-bg: #242424;
-      --border-color: #404040;
-    }
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  background: white;
+}
 
-    body {
-      font-family: "Inter", sans-serif;
-      background: var(--primary-dark);
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
+header {
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
 
-    .container {
-      max-width: 1200px;
-      padding: 0 15px;
-    }
+h1 {
+  font-size: 32px;
+  margin: 0;
+}
 
-    .jumbotron {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
-      color: var(--text-primary);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
+.title {
+  color: #2563eb;
+  font-weight: 600;
+  margin-top: 4px;
+}
 
-    .jumbotron h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
+.contact-inline {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6b7280;
+}
 
-    h2 {
-      font-size: 1.8rem;
-      color: var(--text-primary);
-      font-weight: 500;
-      border-left: 4px solid var(--accent-blue);
-      padding-left: 1rem;
-      margin-bottom: 1.5rem;
-    }
+.contact-inline span,
+.contact-inline a {
+  margin-right: 15px;
+}
 
-    h5 {
-      color: var(--text-primary);
-      font-weight: 600;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
+h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 4px;
+  margin-top: 30px;
+}
 
-    h6 {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      font-weight: 400;
-      margin-bottom: 1rem;
-    }
+.experience-item,
+.project-item {
+  margin-top: 15px;
+}
 
-    p {
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-    }
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
 
-    a {
-      color: var(--accent-blue);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+.location {
+  font-size: 12px;
+  color: #6b7280;
+}
 
-    a:hover {
-      color: #0056b3;
-      text-decoration: none;
-    }
+ul {
+  margin-top: 5px;
+  padding-left: 18px;
+}
 
-    .experience-section {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      transition: border-color 0.3s ease;
-    }
+.stack {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 600;
+}
 
-    .experience-section:hover {
-      border-color: var(--accent-blue);
-    }
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-top: 20px;
+}
 
-    .project-section {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
+.skills span {
+  display: inline-block;
+  background: #e5e7eb;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin: 4px;
+  font-size: 13px;
+}
 
-    .tech-stack {
-      color: var(--text-secondary);
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-
-    ul {
-      color: var(--text-secondary);
-      padding-left: 1.5rem;
-    }
-
-    ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    hr {
-      border-color: var(--border-color);
-      margin: 1.5rem 0;
-    }
-
-    footer {
-      background: var(--secondary-dark);
-      border-top: 1px solid var(--border-color);
-      padding: 2rem 0;
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .contact-info {
-      color: var(--text-secondary);
-    }
-
-    .contact-info a {
-      color: var(--accent-blue);
-    }
-
-    .skills-section {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .language-item {
-      color: var(--text-secondary);
-    }
-
-    .img-thumbnail {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 0.25rem;
-      transition: border-color 0.3s ease;
-      height: 50px;
-    }
-
-    .img-thumbnail:hover {
-      border-color: var(--accent-blue);
-    }
-
-    @media (max-width: 768px) {
-      .jumbotron h1 {
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
-    }
+aside h2 {
+  margin-top: 20px;
+}
   </style>
 </head>
 
-<body>
+<body class="resume-body">
   <div class="container">
-    <div class="jumbotron">
-      <h1>Aaron Sibanda | <span style="font-weight: 300">Software Engineer</span></h1>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>About</h2>
-        <p>Young software engineer with several years of industry experience, working with and building teams of highly efficient engineers, following best work practices and using the newest tools and techniques. Passionate about building reliable, user-focused products with modern technologies, especially in IoT, video streaming, and backend systems development.</p>
-      </div>
 
-      <div class="col-sm-12">
-        <h2>Education</h2>
-        <div class="experience-section">
-          <h5>Warsaw University of Technology</h5>
-          <h6>Warsaw, Poland</h6>
-          <p>BSc in Computer Science | GPA: 4.5 / 5</p>
-          <ul>
-            <li>Relevant Coursework: Programming Fundamentals, Computer Architecture, OOP, Algorithms, Digital Circuits</li>
-            <li>Highlighted: Software Engineering, Databases, Algorithms</li>
-          </ul>
-        </div>
-      </div>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <div>
+          <h1>Aaron Sibanda</h1>
+          <p class="title">Software Engineer</p>
 
-      <h2 class="col-sm-12">Work Experience</h2>
-      
-      <div class="col-sm-6 mb-5">
-        <div class="experience-section">
-          <h5><a href="#">Jalapenno</a> - Ruby on Rails Developer</h5>
-          <h6>Warsaw, Poland [Mar 2023 - Present]</h6>
-          <ul>
-            <li>Developed a POS system with Ruby on Rails and PostgreSQL, handling orders, inventory, and payments</li>
-            <li>Built QR code menus and real-time order updates with WebSockets and ActionCable</li>
-            <li>Enabled multi-location management with centralized inventory and sales reporting</li>
-            <li>Designed responsive UIs for desktop and mobile with role-based access control</li>
-            <li>Integrated Stripe and Square for secure payments; optimized performance with caching</li>
-          </ul>
-          <b class="tech-stack">Technologies used: Ruby on Rails, PostgreSQL, Redis, WebSockets, ActionCable, Stripe, Square, JavaScript</b>
-        </div>
-      </div>
-
-      <div class="col-sm-6 mb-5">
-        <div class="experience-section">
-          <h5><a href="#">SquareUp (Foundever)</a> - Customer Service Agent</h5>
-          <h6>Warsaw, Poland [Jan 2024 - Jan 2025]</h6>
-          <ul>
-            <li>Handled 40–60 daily customer inquiries via phone, email, and chat, maintaining 95% CSAT</li>
-            <li>Deployed Zendesk smart-reply templates reducing average response time by 20%</li>
-            <li>Authored onboarding playbooks cutting new-hire ramp-up by two weeks</li>
-            <li>Beta-tested AI troubleshooting features, delivering actionable UX feedback</li>
-          </ul>
-          <b class="tech-stack">Technologies used: Jira, Zendesk, Amazon Connect, Microsoft 365</b>
-        </div>
-      </div>
-
-      <div class="col-sm-6 mb-5">
-        <div class="experience-section">
-          <h5><a href="#">Riot Network</a> - Network Technician</h5>
-          <h6>Johannesburg, South Africa [Jun 2021 - Jul 2022]</h6>
-          <ul>
-            <li>Deployed 15+ 5G edge pods city-wide, boosting throughput by 40%</li>
-            <li>Analyzed logs in Python, reducing downtime by 25%</li>
-            <li>Customized embedded Linux builds; automated deployments with Bash/Ansible</li>
-          </ul>
-          <b class="tech-stack">Technologies used: Python, Embedded Linux, Ansible, Bash, Grafana</b>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>Personal Projects</h2>
-      </div>
-      
-      <div class="col-sm-12 mb-4">
-        <div class="project-section">
-          <h5><a href="https://github.com/aaronrhino99/music_app" target="_blank">Lalela Music App</a></h5>
-          <p>Full-stack YouTube-to-MP3 streaming app with Rails API and React frontend. Integrated YouTube Data API, yt-dlp, FFmpeg for audio conversion. Managed background jobs with Sidekiq and Redis for downloads and conversions.</p>
-          <b class="tech-stack">Technologies used: Ruby on Rails 8, PostgreSQL, Redis, Sidekiq, React, Docker</b>
-        </div>
-      </div>
-
-      <div class="col-sm-12 mb-4">
-        <div class="project-section">
-          <h5><a href="https://github.com/aaronrhino99/sample_app" target="_blank">Sample App</a></h5>
-          <p>Twitter-style Rails clone with authentication and timelines. Built secure login, user profiles, threaded comments.</p>
-          <b class="tech-stack">Technologies used: Ruby on Rails, JavaScript, HTML</b>
-        </div>
-      </div>
-
-      <div class="col-sm-12 mt-4">
-        <div class="skills-section">
-          <h2>Skills</h2>
-          <div class="row">
-            <div class="col-sm-12">
-              <b style="color: var(--text-primary);">LANGUAGES, TECHNOLOGIES AND FRAMEWORKS</b>
-              <p>Ruby on Rails, JavaScript (ES6+), React, C++, Go, Turbo, Stimulus, PostgreSQL, SQL, Docker, Redis, Sidekiq, Git, Jira, AWS</p>
-              
-              <b style="color: var(--text-primary);">SPECIALIZATIONS</b>
-              <ul>
-                <li>Backend Systems Development</li>
-                <li>Database Optimization & Caching</li>
-                <li>API Integration & Development</li>
-                <li>DevOps & Deployment Automation</li>
-                <li>Network Infrastructure</li>
-              </ul>
-            </div>
+          <div class="contact-inline">
+            <span>📞 +48 732 775 191</span>
+            <span>✉️ aaronnsibanda@gmail.com</span>
+            <span>📍 Warsaw, Poland</span>
+            <a href="https://github.com/aaronrhino99">GitHub</a>
+            <a href="https://www.linkedin.com/in/aaron-sibanda-16876b171/">LinkedIn</a>
           </div>
         </div>
       </div>
+    </header>
 
-      <div class="col-sm-4">
-        <h5 style="color: var(--text-primary);">Languages</h5>
+    <!-- Summary -->
+    <section>
+      <h2>Summary</h2>
+      <p>
+        Software Engineer with experience building scalable backend systems and full-stack applications using Ruby on Rails, React, and PostgreSQL. Focused on performance, reliability, and clean architecture. Experience spans IoT infrastructure, real-time systems, and production SaaS platforms.
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <h2>Experience</h2>
+
+      <div class="experience-item">
+        <div class="exp-header">
+          <strong>Jalapenno</strong> | Ruby on Rails Developer
+          <span>Mar 2023 – Present</span>
+        </div>
+        <p class="location">Warsaw, Poland</p>
+        <ul>
+          <li>Built production POS system handling orders, inventory and payments</li>
+          <li>Implemented real-time updates using WebSockets and ActionCable</li>
+          <li>Integrated Stripe and Square payment systems</li>
+          <li>Enabled multi-location management with centralized reporting</li>
+        </ul>
+        <p class="stack">Stack: Rails, PostgreSQL, Redis, ActionCable, JavaScript</p>
       </div>
-      <div class="col-sm-8">
-        <ul class="language-item"> 
-          <li>English (Fluent)</li>
-          <li>Polish (Conversational)</li>
+
+      <div class="experience-item">
+        <div class="exp-header">
+          <strong>SquareUp (Foundever)</strong> | Customer Support Engineer
+          <span>2024 – 2025</span>
+        </div>
+        <ul>
+          <li>Handled 40–60 technical cases daily with 95% CSAT</li>
+          <li>Reduced response time by 20% using automation templates</li>
+          <li>Provided product feedback for AI troubleshooting tools</li>
         </ul>
       </div>
-    </div>
-  </div>
 
-  <footer>
-    <div class="container text-center">
-      <h2>Contact</h2>
-      <div class="row contact-info">
-        <div class="col-sm-4">
-          <a href="tel:+48732775191">+48 732 775 191</a>
+      <div class="experience-item">
+        <div class="exp-header">
+          <strong>Riot Network</strong> | Network Technician
+          <span>2021 – 2022</span>
         </div>
-        <div class="col-sm-4">
-          <a href="mailto:aaronnsibanda@gmail.com">aaronnsibanda@gmail.com</a>
-        </div>
-        <div class="col-sm-4">
-          Warsaw, Poland
-        </div>
-
-        <div class="col-sm-12 mt-3">
-          <a href="https://github.com/aaronrhino99">
-            <img style="height: 50px;" class="img-thumbnail" src="./git.svg" alt="GitHub">
-          </a>
-          <a href="https://www.linkedin.com/in/aaron-sibanda-16876b171/">
-            <img style="height: 50px;" class="img-thumbnail" src="./link.png" alt="LinkedIn">
-          </a>
-          <a href="https://aaronrhino99.github.io/portfolio_AaronSibanda">
-            <img style="height: 50px;" class="img-thumbnail" src="" alt="Portfolio">
-          </a>
-        </div>
+        <ul>
+          <li>Deployed 5G edge infrastructure improving throughput by 40%</li>
+          <li>Automated monitoring with Python and Bash</li>
+          <li>Reduced downtime by 25%</li>
+        </ul>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Projects -->
+    <section>
+      <h2>Projects</h2>
+
+      <div class="project-item">
+        <strong>Lalela Music App</strong>
+        <p>
+          Full-stack YouTube-to-MP3 platform with background processing and Dockerized deployment.
+        </p>
+        <p class="stack">Tech: Rails 8, React, Redis, Sidekiq, Docker</p>
+      </div>
+
+      <div class="project-item">
+        <strong>Sample App</strong>
+        <p>Twitter-style Rails application with authentication and timelines.</p>
+        <p class="stack">Tech: Ruby on Rails, JavaScript</p>
+      </div>
+    </section>
+
+    <!-- Skills + Education -->
+    <div class="grid">
+      <section class="main">
+        <h2>Technical Skills</h2>
+        <div class="skills">
+          <span>Ruby on Rails</span>
+          <span>React</span>
+          <span>PostgreSQL</span>
+          <span>Redis</span>
+          <span>Docker</span>
+          <span>Sidekiq</span>
+          <span>AWS</span>
+          <span>C++</span>
+          <span>Go</span>
+        </div>
+      </section>
+
+      <aside>
+        <h2>Education</h2>
+        <p><strong>Warsaw University of Technology</strong><br>
+        BSc Computer Science</p>
+
+        <h2>Languages</h2>
+        <p>English – Fluent<br>
+        Polish – Conversational</p>
+      </aside>
+    </div>
+
+  </div>
 </body>
 </html>
